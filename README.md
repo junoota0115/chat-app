@@ -22,3 +22,50 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## users テーブル
+|Column             |Type  |Options     |
+|-------------------|------|------------|
+|name               |string|null: false |
+|email              |string|null: false |
+|encrypted_password |string|null: false |
+
+## Association
+- has_many :messages
+- has_many :rooms, through: :room_users
+- has_many :rooms_users 
+
+
+## rooms　テーブル
+|Column             |Type  |Options     |
+|-------------------|------|------------|
+|name               |string|null: false |
+
+## Association
+- has_many :messages
+- has_many :users, through: :room_users
+- has_many :rooms_users 
+
+
+## room_users テーブル 
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true | 
+| room   | references | null: false, foreign_key: true |
+
+## Association
+- belong_to :user
+- belong_to :room
+
+
+## messages テーブル
+|Column       |Type      |Options                       |
+|-------------|----------|------------------------------|
+|content      |string    |                              |
+|user         |references|null: false, foreign_key: true|
+|room         |references|null: false, foreign_key: true|
+
+## Association
+- belong_to :user
+- belong_to :room
