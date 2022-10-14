@@ -33,7 +33,7 @@ Things you may want to cover:
 ## Association
 - has_many :messages
 - has_many :rooms, through: :room_users
-- has_many :rooms_users 
+- has_many :room_users 
 
 
 ## rooms　テーブル
@@ -44,7 +44,7 @@ Things you may want to cover:
 ## Association
 - has_many :messages
 - has_many :users, through: :room_users
-- has_many :rooms_users 
+- has_many :room_users 
 
 
 ## room_users テーブル 
