@@ -1,5 +1,5 @@
 class RoomUser < ApplicationRecord
   ## Association
-belong_to :user
-belong_to :room
+  belongs_to :room
+  belongs_to :user
 end

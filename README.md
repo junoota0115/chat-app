@@ -55,8 +55,8 @@ Things you may want to cover:
 | room   | references | null: false, foreign_key: true |
 
 ## Association
-- belong_to :user
-- belong_to :room
+- belongs_to :user
+- belongs_to :room
 
 
 ## messages テーブル
@@ -67,5 +67,5 @@ Things you may want to cover:
 |room         |references|null: false, foreign_key: true|
 
 ## Association
-- belong_to :user
-- belong_to :room
+- belongs_to :user
+- belongs_to :room
